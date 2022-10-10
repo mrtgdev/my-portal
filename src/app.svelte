@@ -1,18 +1,18 @@
 
 <!-- Main Layout -->
-
-<!-- Fecha del portfolio -->
-<div class="absolute top-24 right-12 text-7xl text-end text-gray-800 font-grotesk font-semibold z-10">
-  <h2>20<br>{ year }</h2>
-  <i class="ri-arrow-right-up-line" />
-</div>
-
 <div id="container">
+
+  <!-- Noise Background -->
   <Back />
+
+  <!-- Pagination -->
+  <Pagination />
+
+  <!-- Sections -->
   <main class="noise">
     <Parallax sections={4} config={{ stiffness: 0.2, damping: 0.3 }}>
-      <StickyLayer offset={{ top:0, bottom: 1 }} 
-        style="display:flex; justify-content: center; align-items: center; min-height: 100vh;" >
+      <StickyLayer offset={{ top:0, bottom: 1 }}
+        style="display:flex; justify-content: center; align-items: center; min-height: 80vh;" >
         <HomeSection />
       </StickyLayer>
       <StickyLayer offset={{ top: 1, bottom: 2 }} 
@@ -29,6 +29,8 @@
       </StickyLayer>
     </Parallax>
   </main>
+
+  <!-- Footer -->
   <Footer />
 </div>
 
@@ -38,6 +40,7 @@ import { Parallax, StickyLayer } from 'svelte-parallax';
 
 // Components
 import Back from './lib/back.svelte';
+import Pagination from './lib/pagination.svelte';
 import Footer from './lib/footer.svelte';
 
 // Section
@@ -48,13 +51,5 @@ import ContactSection from './lib/sections/contact.svelte';
 
 // Styles SCSS
 import './styles/background.scss';
-
-// > Get the inner height dynamic
-let innerHeight = window.innerHeight;
-console.log(innerHeight);
-
-// > Get the current year
-let currentTime = new Date();
-let year = currentTime.getFullYear().toString().slice(-2);
 
 </script>
