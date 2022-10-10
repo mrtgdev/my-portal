@@ -10,7 +10,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        'bigstone': "#171717",
+        'bigstone': "#080808",
         'fluro-papaya': "#fe5000",
         'neon-blue': "#47f7fc",
       }

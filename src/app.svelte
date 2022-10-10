@@ -11,26 +11,22 @@
   <Back />
   <main class="noise">
     <Parallax sections={4} config={{ stiffness: 0.2, damping: 0.3 }}>
-      <ParallaxLayer>
-        <div class="flex justify-center items-center py-10 md:py-0 min-h-screen px-4 bg-blue-300">
-          <HomeSection />
-        </div>
-      </ParallaxLayer>
-      <ParallaxLayer offset={1}>
-        <div class="flex justify-center items-center min-h-screen px-4 bg-green-400">
-          <AboutSection />
-        </div>
-      </ParallaxLayer>
-      <ParallaxLayer offset={2}>
-        <div class="flex justify-center items-center min-h-screen px-4 bg-red-400">
-          <ProjectSection />
-        </div>
-      </ParallaxLayer>
-      <ParallaxLayer offset={3}>
-        <div class="flex justify-center items-center min-h-screen px-4 bg-lime-500">
-          <ContactSection />
-        </div>
-      </ParallaxLayer>
+      <StickyLayer offset={{ top:0, bottom: 1 }} 
+        style="display:flex; justify-content: center; align-items: center; min-height: 100vh;" >
+        <HomeSection />
+      </StickyLayer>
+      <StickyLayer offset={{ top: 1, bottom: 2 }} 
+        style="display:flex; justify-content: center; align-items: center; min-height: 100vh;" >
+        <AboutSection />
+      </StickyLayer>
+      <StickyLayer offset={{ top: 2, bottom: 3 }} 
+        style="display:flex; justify-content: center; align-items: center; min-height: 100vh;" >
+        <ProjectSection />
+      </StickyLayer>
+      <StickyLayer offset={{ top: 3, bottom: 6 }} 
+        style="display:flex; justify-content: center; align-items: center; min-height: 100vh;" >
+        <ContactSection />
+      </StickyLayer>
     </Parallax>
   </main>
   <Footer />
@@ -38,8 +34,7 @@
 
 <script>
 
-import { fly } from 'svelte/transition';
-import { Parallax, ParallaxLayer } from 'svelte-parallax';
+import { Parallax, StickyLayer } from 'svelte-parallax';
 
 // Components
 import Back from './lib/back.svelte';
