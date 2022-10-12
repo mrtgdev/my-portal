@@ -2,10 +2,6 @@
 <!-- Footer Component -->
 
 <!-- Current Year -->
-<div class="absolute top-24 right-12 text-7xl text-end text-gray-800 font-grotesk font-semibold z-10">
-    <h2>20<br>{ year }</h2>
-    <i class="ri-arrow-right-up-line" />
-</div>
 
 <!-- Mobile Footer -->
 <div class="fixed flex lg:hidden z-50 bottom-0 left-0 h-32 w-screen bg-black font-grotesk text-gray-700 justify-center items-center px-6 md:px-12">
@@ -39,11 +35,3 @@
         </button>
     </div>
 </div>
-
-<script>
-
-// > Get the current year
-let currentTime = new Date();
-let year = currentTime.getFullYear().toString().slice(-2);
-
-</script>

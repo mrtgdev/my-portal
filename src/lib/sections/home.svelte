@@ -10,3 +10,21 @@
         </p>
     </div>
 </div>
+
+<!-- Background  -->
+<div id="back" class="w-screen h-auto absolute inset-0" style="z-index: 0;">
+    <div class="absolute -right-94 -top-24 justify-center items-center z-0">
+        <img class="filter-black" src={CardStripe} alt="stripes" width="60%"/>
+    </div>
+    <div style="position: absolute; z-index: 0;">
+        <img src={Background} alt="geometry" />
+    </div>
+</div>
+
+<script>
+
+// Background
+import Background from '../../assets/stripes/background-init.svg';
+import CardStripe from '../../assets/stripes/card-stripe.gif';
+    
+</script>
