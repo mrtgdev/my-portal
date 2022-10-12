@@ -19,6 +19,7 @@
   "dependencies": {
     "remixicon": "^2.5.0",
     "sass": "^1.55.0",
-    "svelte-parallax": "^0.6.0"
+    "svelte-parallax": "^0.6.0",
+    "tw-elements": "^1.0.0-alpha12"
   }
 }

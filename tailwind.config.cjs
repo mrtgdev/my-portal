@@ -1,8 +1,11 @@
+
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
       "./index.html",
-      "./src/**/*.{js,ts,jsx,tsx,svelte}",
+      "./src/**/*.{js,ts,jsx,tsx,svelte,html}",
+      './node_modules/tw-elements/dist/js/**/*.js',
   ],
   theme: {
     fontFamily: {
@@ -16,5 +19,8 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tw-elements/dist/plugin')
+  ],
+  darkMode: 'class',
 }

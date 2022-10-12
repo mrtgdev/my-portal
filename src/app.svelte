@@ -10,23 +10,23 @@
 
   <!-- Sections -->
   <main class="noise">
-    <Parallax sections={4} config={{ stiffness: 0.2, damping: 0.3 }}>
-      <StickyLayer offset={{ top:0, bottom: 1 }}
+    <Parallax sections={4} config={{ stiffness: 0.2, damping: 0.3 }} style="z-index: 0;">
+      <ParallaxLayer offset={0}
         style="display:flex; justify-content: center; align-items: center; min-height: 80vh;" >
         <HomeSection />
-      </StickyLayer>
-      <StickyLayer offset={{ top: 1, bottom: 2 }} 
+      </ParallaxLayer>
+      <ParallaxLayer offset={1} 
         style="display:flex; justify-content: center; align-items: center; min-height: 100vh;" >
         <AboutSection />
-      </StickyLayer>
-      <StickyLayer offset={{ top: 2, bottom: 3 }} 
+      </ParallaxLayer>
+      <ParallaxLayer offset={2} 
         style="display:flex; justify-content: center; align-items: center; min-height: 100vh;" >
         <ProjectSection />
-      </StickyLayer>
-      <StickyLayer offset={{ top: 3, bottom: 6 }} 
+      </ParallaxLayer>
+      <ParallaxLayer offset={3} 
         style="display:flex; justify-content: center; align-items: center; min-height: 100vh;" >
         <ContactSection />
-      </StickyLayer>
+      </ParallaxLayer>
     </Parallax>
   </main>
 
@@ -36,7 +36,7 @@
 
 <script>
 
-import { Parallax, StickyLayer } from 'svelte-parallax';
+import { Parallax, ParallaxLayer } from 'svelte-parallax';
 
 // Components
 import Back from './lib/back.svelte';

@@ -1,9 +1,4 @@
 
 <!-- Background  -->
-<div id="back" class="page-header">
-    <!-- Gradient Labels -->
-    <div class="gradient"></div>
-    <div class="gradient"></div>
-    <div class="gradient"></div>
-    <div class="gradient"></div>
+<div id="back" class="w-screen h-auto absolute inset-0" style="z-index: 0;">
 </div>

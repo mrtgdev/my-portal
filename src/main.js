@@ -4,6 +4,7 @@
 
 // Styles Externals
 import './styles/app.scss';
+import 'tw-elements';
 import 'remixicon/fonts/remixicon.css';
 
 import App from './app.svelte'
