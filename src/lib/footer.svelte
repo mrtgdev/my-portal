@@ -2,6 +2,20 @@
 <!-- Footer Component -->
 
 <!-- Current Year -->
+<div class="absolute top-24 right-12 text-end text-gray-800 font-grotesk font-semibold z-10
+hover:text-gray-500 hover:font-bold backdrop:transition duration-500 ease-in-out transform hover:translate-x-2 hover:scale-110">
+    <h2 class="text-7xl ">20<br>{ year }</h2>
+    <i class="ri-arrow-right-up-line text-7xl" />
+</div>
+
+<!-- Text Decoration -->
+<div class="absolute hidden md:flex bottom-52 right-12 w-16 h-1/3 text-gray-800 font-grotesk z-10 justify-center
+    hover:text-gray-500 hover:font-bold backdrop:transition duration-500 ease-in-out transform hover:translate-x-2 hover:scale-110">
+    <h2 class=" text-base orientation-vertically font-semibold flex-wrap justify-center items-center">
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+        Aperiam at eius minus? Voluptate deleniti magni recusandae."
+    </h2>
+</div>
 
 <!-- Mobile Footer -->
 <div class="fixed flex lg:hidden z-50 bottom-0 left-0 h-32 w-screen bg-black font-grotesk text-gray-700 justify-center items-center px-6 md:px-12">
@@ -35,3 +49,20 @@
         </button>
     </div>
 </div>
+
+<script>
+
+// > Get the current year
+let currentTime = new Date();
+let year = currentTime.getFullYear().toString().slice(-2);
+
+</script>
+
+<style>
+
+.orientation-vertically {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+</style>

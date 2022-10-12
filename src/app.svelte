@@ -7,12 +7,8 @@
 
   <!-- Sections -->
   <main class="noise">
-    <Parallax sections={3.25} style="z-index: 0;">
+    <Parallax sections={3.25} config={{stiffness: 0.1, damping: 0.8}} style="z-index: 0;">
       <ParallaxLayer offset={0} style="display:flex; justify-content: center; align-items: center; min-height: 100vh;" >
-        <div class="absolute top-24 right-12 text-7xl text-end text-gray-800 font-grotesk font-semibold z-10">
-            <h2>20<br>{ year }</h2>
-            <i class="ri-arrow-right-up-line" />
-        </div>
         <HomeSection />
       </ParallaxLayer>
       <div class="flex justify-center items-center h-screen z-0"></div>
@@ -42,9 +38,5 @@ import ContactSection from './lib/sections/contact.svelte';
 
 // Styles SCSS
 import './styles/background.scss';
-
-// > Get the current year
-let currentTime = new Date();
-let year = currentTime.getFullYear().toString().slice(-2);
 
 </script>
