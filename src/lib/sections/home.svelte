@@ -2,17 +2,17 @@
 <!-- Home Section -->
 <div id="home" class="flex flex-row w-full h-full justify-start items-center font-grotesk px-12 py-24 z-50">
     <div class="bg-green-500 w-full md:w-4/5 h-full grid relative template">
-        <div class="bg-blue-500 col-start-1 col-end-6 row-start-1 row-end-5 hover:font-bold 
+        <div class="relative bg-blue-500 col-start-1 col-end-6 row-start-1 row-end-5 hover:font-bold 
             backdrop:transition duration-500 ease-in-out transform hover:translate-x-2 hover:scale-105 hover:z-50 image-principal">
         </div>
         <div class="bg-sky-500">Hueco</div>
         <div class="bg-slate-500">Hueco</div>
         <div class="bg-gray-600 row-start-3 row-end-5">Hueco</div>
-        <div class="bg-orange-500 col-start-1 col-end-4 row-start-5 row-end-7 hover:font-bold 
+        <div class="md:relative hidden bg-orange-500 col-start-1 col-end-4 row-start-5 row-end-7 hover:font-bold 
             backdrop:transition duration-500 ease-in-out transform hover:translate-x-2 hover:scale-105 hover:z-50">
             Imagen Espaldas
         </div>
-        <div class="bg-red-500 col-start-4 col-end-7 row-start-5 row-end-7 hover:font-bold 
+        <div class="md:relative hidden bg-red-500 col-start-4 col-end-7 row-start-5 row-end-7 hover:font-bold 
             backdrop:transition duration-500 ease-in-out transform hover:translate-x-2 hover:scale-105 hover:z-50">
             Imagen DEV
         </div>
@@ -52,7 +52,7 @@ import CardStripe from '../../assets/stripes/card-stripe.svg';
 
 .image-principal {
     background: url('../../assets/IMG_3681.JPG');
-    background-size:contain;
+    background-size:cover;
     background-repeat: no-repeat;
 }
 

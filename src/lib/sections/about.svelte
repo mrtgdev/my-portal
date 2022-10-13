@@ -3,7 +3,7 @@
 <div class="flex flex-col gap-6 w-full justify-start items-center font-grotesk px-12 text-white">
     <div id="saludo">
         <p class="text-white">Hola! 👋, me llamo</p>
-        <h1 class="text-white uppercase font-semibold">
+        <h1 class="title uppercase font-semibold text-3xl bg-clip-text">
             Mario Ortega Palacios
         </h1>
     </div>
@@ -22,11 +22,12 @@
             - Setup ( borde punteado )
     -->
 
-    <div class="flex overflow-clip overflow-x-visible space-x-8">
+    <ul class="list inline-flex overflow-auto overflow-y-hidden max-w-full mb-4 whitespace-nowrap space-x-8">
         <div id="left" class="absolute w-screen z-0 h-32 bg-stripeLeft filter-svg"></div>
         <div id="right" class="absolute right-0 w-screen z-0 h-32 bg-stripeLeft filter-svg"></div>
         <!-- Un Loop For > que realice un listado de las opciones mostradas -->
         {#each aptitude as item, i }
+        <li class="inline-flex align-top">
             <button type="button" class="card relative flex items-center justify-center m-3 overflow-hidden shadow-xl w-36 h-52 md:w-60 md:h-72 font-grotesk text-gray-50 hover:text-fluro-papaya"
                 data-bs-toggle="modal" data-bs-target="#exampleModalScrollable" on:click={handleClickCard}>
                 <div class="zoom-image absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover { item.background }"></div>
@@ -43,10 +44,10 @@
                     { item.name }
                 </h1>
                 {/if}
-                
             </button>
+        </li>
         {/each}
-    </div>
+    </ul>
 </div>
 
 <Modal {source} />
@@ -100,7 +101,24 @@ async function handleUpdateModalStyled() {
 </script>
 
 <style>
+
 .filter-svg {
     filter: invert(42%) sepia(7%) saturate(14%) hue-rotate(18deg) brightness(99%) contrast(86%);
 }
+
+.list {
+    display: inline-flex;
+    overflow: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    margin: 0 0 1em;
+    white-space: nowrap;
+}
+
+.title {
+    -webkit-text-stroke: 3px #fff;
+    -webkit-text-fill-color: transparent;
+    line-height: 24px;
+}
+
 </style>
