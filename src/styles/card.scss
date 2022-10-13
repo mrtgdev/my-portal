@@ -1,0 +1,13 @@
+
+// Card
+.card {
+    -webkit-clip-path: polygon(100% 0, 100% 79%, 70% 100%, 0 100%, 0 0 );
+    clip-path: polygon(100% 0, 100% 79%, 70% 100%, 0 100%, 0 0 );
+}
+
+.card:hover .zoom-image {
+    @apply scale-150;
+}
+.card:hover .zoom-text {
+    @apply scale-100;
+}

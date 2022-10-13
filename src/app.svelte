@@ -7,7 +7,7 @@
 
   <!-- Sections -->
   <main class="noise">
-    <Parallax sections={3.25} config={{stiffness: 0.1, damping: 0.8}} style="z-index: 0;">
+    <Parallax sections={3.5} config={{stiffness: 0.1, damping: 0.8}} style="z-index: 0;">
       <ParallaxLayer offset={0} style="display:flex; justify-content: center; align-items: center; min-height: 100vh;" >
         <HomeSection />
       </ParallaxLayer>
