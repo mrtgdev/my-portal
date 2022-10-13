@@ -27,9 +27,9 @@
         <div id="right" class="absolute right-0 w-screen z-0 h-32 bg-stripeLeft filter-svg"></div>
         <!-- Un Loop For > que realice un listado de las opciones mostradas -->
         {#each aptitude as item, i }
-        <li class="inline-flex align-top">
-            <button type="button" class="card relative flex items-center justify-center m-3 overflow-hidden shadow-xl w-36 h-52 md:w-60 md:h-72 font-grotesk text-gray-50 hover:text-fluro-papaya"
-                data-bs-toggle="modal" data-bs-target="#exampleModalScrollable" on:click={handleClickCard}>
+        <li class="container inline-flex align-top">
+            <!-- <button type="button" class="card relative flex items-center justify-center m-3 overflow-hidden shadow-xl w-36 h-52 md:w-60 md:h-72 font-grotesk text-gray-50 hover:text-fluro-papaya"
+                data-bs-toggle="modal" data-bs-target="#exampleModalScrollable" on:click={handleClickCard} >
                 <div class="zoom-image absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover { item.background }"></div>
                 {#if item.name === 'SetUp'}
                     <h1 class="zoom-text absolute text-2xl md:text-3xl xl:text-5xl font-black transition-all duration-500 ease-in-out 
@@ -44,13 +44,37 @@
                     { item.name }
                 </h1>
                 {/if}
-            </button>
+            </button> -->
+            <input class="{item.id} modal-btn" type="checkbox" id="modal-btn" name="modal-btn" bind:checked={visible}/>
+            <label for="modal-btn" class="card relative flex items-center justify-center m-3 overflow-hidden shadow-xl w-36 h-52 md:w-60 md:h-72 
+                font-grotesk text-gray-50 hover:text-fluro-papaya" >
+                <i class="uil ri-close-fill" />
+                <div class="zoom-image absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover { item.background }"></div>
+                {#if item.name === 'SetUp'}
+                    <h1 class="zoom-text absolute text-2xl md:text-3xl xl:text-5xl font-black transition-all duration-500 ease-in-out 
+                        transform scale-150 opacity-60">
+                        { item.name.slice(0,3) }
+                        <br>
+                        { item.name.slice(-2) }
+                    </h1>
+                {:else}
+                <h1 class="zoom-text absolute text-2xl md:text-3xl xl:text-5xl font-black transition-all duration-500 ease-in-out 
+                    transform scale-150 opacity-60">
+                    { item.name }
+                </h1>
+                {/if}
+            </label>		
+            <div class="modal">
+                <div class="modal-wrap">	
+                    <img src="https://assets.codepen.io/1462889/sl3.jpg" alt="">	
+                    <p class="text-black">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>	          		
+                </div>			          		
+            </div>
         </li>
         {/each}
     </ul>
+    { visible }
 </div>
-
-<Modal {source} />
 
 <script>
 
@@ -79,12 +103,14 @@ This is a paragraph.
 |-------------|---------|
 | With two    | columns |`;
 
+let visible = false;
+
 let aptitude = [
-    { id: 1, name: 'Skills', source: source, background: 'bg-laptop'  },
-    { id: 2, name: 'Empleos', source: source, background: 'bg-laptop'},
-    { id: 3, name: 'Aptitudes', source: source, background: 'bg-laptop'},
-    { id: 4, name: 'Hobbies', source: source, background: 'bg-laptop'},
-    { id: 5, name: 'SetUp', source: source, background: 'bg-laptop'}
+    { id: 'skills', name: 'Skills', source: source, background: 'bg-laptop'  },
+    { id: 'jobs', name: 'Empleos', source: source, background: 'bg-laptop'},
+    { id: 'apt', name: 'Aptitudes', source: source, background: 'bg-laptop'},
+    { id: 'hobb', name: 'Hobbies', source: source, background: 'bg-laptop'},
+    { id: 'setup', name: 'SetUp', source: source, background: 'bg-laptop'}
 ]
 
 async function handleClickCard() {

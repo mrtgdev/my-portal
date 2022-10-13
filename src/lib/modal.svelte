@@ -2,7 +2,8 @@
 <!-- Modal -->
 <div class="fixed hidden inset-0 outline-none overflow-x-hidden overflow-y-auto z-50 font-grotesk"
   id="exampleModalScrollable" tabindex="-1" aria-labelledby="exampleModalScrollableLabel" aria-hidden="true" >
-  <div class="modal-dialog modal-dialog-scrollable modal-xl absolute inset-0 w-full py-12 mx-auto">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl absolute inset-0 w-full py-12 mx-auto" 
+    in:fly="{{ x: 1200, duration: 800 }}" out:fade>
     <div class="modal-content border-none shadow-lg relative flex flex-col z-50 w-full bg-black bg-clip-padding
         outline-none text-current">
       <div
@@ -29,6 +30,7 @@
 
 <script>
 
+import { fly, fade } from 'svelte/transition';
 import SvelteMarkdown from 'svelte-markdown';
 
 // Styled SCSS
