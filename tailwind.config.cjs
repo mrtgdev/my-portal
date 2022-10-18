@@ -15,7 +15,8 @@ module.exports = {
       cooffe: "url('https://images.unsplash.com/photo-1595683363301-1e94594a550d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1834&q=80')"
     },
     fontFamily: {
-      grotesk: ['Space Grotesk', 'monospace']
+      grotesk: ['Space Grotesk', 'monospace'],
+      titleGrotesk: ['Grotesk', 'sans-serif']
     },
     extend: {
       colors: {

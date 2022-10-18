@@ -24,6 +24,11 @@
 	user-select: none; /* Standard syntax */
 }
 
+@font-face {
+	font-family: "Grotesk";
+	src: url("../public/fonts/title-grotesk.ttf");
+}
+
 body {
 	min-height: 100vh;
 	padding: 0;

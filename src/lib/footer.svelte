@@ -2,9 +2,9 @@
 <!-- Footer Component -->
 
 <!-- Current Year -->
-<div class="absolute top-24 right-12 text-end text-gray-800 font-grotesk font-semibold z-10
-hover:text-gray-500 hover:font-bold backdrop:transition duration-500 ease-in-out transform hover:translate-x-2 hover:scale-110">
-    <h2 class="text-7xl ">20<br>{ year }</h2>
+<div class="absolute top-36 md:top-24 right-12 text-end text-gray-800 font-titleGrotesk font-black z-10
+hover:text-gray-500 backdrop:transition duration-500 ease-in-out transform hover:translate-x-2 hover:scale-110">
+    <h2 class="title flex-wrap">20<br>{ year }</h2>
     <i class="ri-arrow-right-up-line text-7xl" />
 </div>
 
@@ -59,6 +59,11 @@ let year = currentTime.getFullYear().toString().slice(-2);
 </script>
 
 <style>
+
+.title {
+    font-size: 4.5em;
+    line-height: 0.80;
+}
 
 .orientation-vertically {
     writing-mode: vertical-rl;

@@ -1,150 +1,39 @@
 
 <!-- About Section -->
-<div class="flex flex-col gap-6 w-full justify-start items-center font-grotesk px-12 text-white">
-    <div id="saludo">
-        <p class="text-white">Hola! 👋, me llamo</p>
-        <h1 class="title uppercase font-semibold text-3xl bg-clip-text">
-            Mario Ortega Palacios
-        </h1>
-    </div>
-    soy un Full-stack Developer con más de 3 años de experiencia en este sector residiendo en Madrid.<br>
-        En mi horario laboral trabajo principalmente en Java y algún framework de Javascript, aunque me encanta investigar por mi cuenta nuevos entornos y 
-        lenguajes de programación para ponerme al día.
-        <br>
-        Si te interesa más "Mi Perfil", puedes hacer click para ver más detalles sobre mí
-
-    <!--
-        Poner aqui las tarjetas de ineteres, que van a ser modals en un overflow infinito
-        Estetica: los botones de mclaren irregular
-            - Skills
-            - Empleos
-            - Aptitudes
-            - Setup ( borde punteado )
-    -->
-
-    <ul class="list inline-flex overflow-auto overflow-y-hidden max-w-full mb-4 whitespace-nowrap space-x-8">
-        <div id="left" class="absolute w-screen z-0 h-32 bg-stripeLeft filter-svg"></div>
-        <div id="right" class="absolute right-0 w-screen z-0 h-32 bg-stripeLeft filter-svg"></div>
-        <!-- Un Loop For > que realice un listado de las opciones mostradas -->
+<div class="flex flex-col gap-6 w-screen bg-green-400 h-full justify-center items-center font-grotesk space-y-4 px-8">
+    <div class="flex flex-col py-12 w-full space-y-6">
         {#each aptitude as item, i }
-        <li class="container inline-flex align-top">
-            <!-- <button type="button" class="card relative flex items-center justify-center m-3 overflow-hidden shadow-xl w-36 h-52 md:w-60 md:h-72 font-grotesk text-gray-50 hover:text-fluro-papaya"
-                data-bs-toggle="modal" data-bs-target="#exampleModalScrollable" on:click={handleClickCard} >
-                <div class="zoom-image absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover { item.background }"></div>
-                {#if item.name === 'SetUp'}
-                    <h1 class="zoom-text absolute text-2xl md:text-3xl xl:text-5xl font-black transition-all duration-500 ease-in-out 
-                        transform scale-150 opacity-60">
-                        { item.name.slice(0,3) }
-                        <br>
-                        { item.name.slice(-2) }
-                    </h1>
-                {:else}
-                <h1 class="zoom-text absolute text-2xl md:text-3xl xl:text-5xl font-black transition-all duration-500 ease-in-out 
-                    transform scale-150 opacity-60">
+            <div>
+                <h1>
                     { item.name }
                 </h1>
-                {/if}
-            </button> -->
-            <input class="{item.id} modal-btn" type="checkbox" id="modal-btn" name="modal-btn" bind:checked={visible}/>
-            <label for="modal-btn" class="card relative flex items-center justify-center m-3 overflow-hidden shadow-xl w-36 h-52 md:w-60 md:h-72 
-                font-grotesk text-gray-50 hover:text-fluro-papaya" >
-                <i class="uil ri-close-fill" />
-                <div class="zoom-image absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover { item.background }"></div>
-                {#if item.name === 'SetUp'}
-                    <h1 class="zoom-text absolute text-2xl md:text-3xl xl:text-5xl font-black transition-all duration-500 ease-in-out 
-                        transform scale-150 opacity-60">
-                        { item.name.slice(0,3) }
-                        <br>
-                        { item.name.slice(-2) }
-                    </h1>
-                {:else}
-                <h1 class="zoom-text absolute text-2xl md:text-3xl xl:text-5xl font-black transition-all duration-500 ease-in-out 
-                    transform scale-150 opacity-60">
-                    { item.name }
-                </h1>
-                {/if}
-            </label>		
-            <div class="modal">
-                <div class="modal-wrap">	
-                    <img src="https://assets.codepen.io/1462889/sl3.jpg" alt="">	
-                    <p class="text-black">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>	          		
-                </div>			          		
             </div>
-        </li>
+            <div id="markdown">
+                { @html item.source }
+            </div>
         {/each}
-    </ul>
-    { visible }
+    </div>
 </div>
 
 <script>
+// @ts-nocheck
 
-import { tick } from "svelte";
-
-// Components
-import Modal from '../modal.svelte';
+// Markdowns
+import { html as Experience } from '../markdown/experience.md'; 
+import { html as Explore } from '../markdown/explore.md';
+import { html as Skills } from '../markdown/skills.md';
+import { html as Hobbies } from '../markdown/hobbies.md';
+import { html as SetUp } from '../markdown/setup.md';
 
 // Styled SCSS
-import '../../styles/card.scss';
-
-// > Get the data
-let source = `
-# This is a header
-
-This is a paragraph.
-
-* This is a list
-* With two items
-  1. And a sublist
-  2. That is ordered
-    * With another
-    * Sublist inside
-
-| And this is | A table |
-|-------------|---------|
-| With two    | columns |`;
-
-let visible = false;
+import '../../styles/accordion.scss';
 
 let aptitude = [
-    { id: 'skills', name: 'Skills', source: source, background: 'bg-laptop'  },
-    { id: 'jobs', name: 'Empleos', source: source, background: 'bg-laptop'},
-    { id: 'apt', name: 'Aptitudes', source: source, background: 'bg-laptop'},
-    { id: 'hobb', name: 'Hobbies', source: source, background: 'bg-laptop'},
-    { id: 'setup', name: 'SetUp', source: source, background: 'bg-laptop'}
-]
-
-async function handleClickCard() {
-    await handleUpdateModalStyled();
-}
-
-// > Delete the className of modal-backdrop
-async function handleUpdateModalStyled() {
-    await tick();
-    let element = document.getElementsByClassName('modal-backdrop');
-    element[0].parentNode.removeChild(element[0]);
-}
+    { id: 'experience', name: 'Experiencia Laboral', source: Experience },
+    { id: 'explore', name: 'Aptitudes', source: Explore },
+    { id: 'skills', name: 'Skills', source: Skills },
+    { id: 'hobb', name: 'Hobbies', source: Hobbies },
+    { id: 'setup', name: 'Set Up', source: SetUp }
+];
 
 </script>
-
-<style>
-
-.filter-svg {
-    filter: invert(42%) sepia(7%) saturate(14%) hue-rotate(18deg) brightness(99%) contrast(86%);
-}
-
-.list {
-    display: inline-flex;
-    overflow: auto;
-    overflow-y: hidden;
-    max-width: 100%;
-    margin: 0 0 1em;
-    white-space: nowrap;
-}
-
-.title {
-    -webkit-text-stroke: 3px #fff;
-    -webkit-text-fill-color: transparent;
-    line-height: 24px;
-}
-
-</style>

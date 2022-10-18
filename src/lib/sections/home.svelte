@@ -1,59 +1,38 @@
-
 <!-- Home Section -->
-<div id="home" class="flex flex-row w-full h-full justify-start items-center font-grotesk px-12 py-24 z-50">
-    <div class="bg-green-500 w-full md:w-4/5 h-full grid relative template">
-        <div class="relative bg-blue-500 col-start-1 col-end-6 row-start-1 row-end-5 hover:font-bold 
-            backdrop:transition duration-500 ease-in-out transform hover:translate-x-2 hover:scale-105 hover:z-50 image-principal">
-        </div>
-        <div class="bg-sky-500">Hueco</div>
-        <div class="bg-slate-500">Hueco</div>
-        <div class="bg-gray-600 row-start-3 row-end-5">Hueco</div>
-        <div class="md:relative hidden bg-orange-500 col-start-1 col-end-4 row-start-5 row-end-7 hover:font-bold 
-            backdrop:transition duration-500 ease-in-out transform hover:translate-x-2 hover:scale-105 hover:z-50">
-            Imagen Espaldas
-        </div>
-        <div class="md:relative hidden bg-red-500 col-start-4 col-end-7 row-start-5 row-end-7 hover:font-bold 
-            backdrop:transition duration-500 ease-in-out transform hover:translate-x-2 hover:scale-105 hover:z-50">
-            Imagen DEV
-        </div>
-        <!-- Ajustar en el final el SVG -->
+<div id="home" class="flex flex-col gap-6 w-screen bg-green-400 h-screen justify-center items-center font-grotesk space-y-4 px-8">
+    <div class="sm:hidden">
+        <!-- Imagen -->
+        <Cube />
     </div>
-</div>
-
-<!-- Background  -->
-<div id="back" class="w-screen h-auto absolute inset-0" style="z-index: 0;">
-    <div class="absolute -right-94 -top-24 justify-center items-center z-0">
-        <img class="filter-svg" src={CardStripe} alt="stripes" width="60%"/>
-    </div>
-    <div style="position: absolute; z-index: 0;">
-        <img src={Background} alt="geometry" />
+    <div class="space-y-8">
+        <div class="text-black text-2xl md:text-3xl text-start sm:w-9/12 md:w-3/5 xl:8/12 lg:text-4xl space-y-4">
+            <div id="name">
+                <p class="title font-titleGrotesk uppercase text-start font-black tracking-tighter">Mario Ortega</p>
+            </div>
+            <p><b> Soy Full Stack Developer especializado en</b> identidad y diseño de sitios web.</p>
+            <p>Residiendo en Madrid.</p>
+        </div>
+        <div class="hidden sm:flex">
+            <div id="cv" class="flex-shrink items-center p-2 px-6 hover:bg-neon-blue text-xs md:text-sm lg:text-xl
+                hover:text-black hover:font-bold backdrop:transition duration-500 ease-in-out transform hover:-translate-y-0 hover:scale-110" >
+                Explora mi trabajo
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
 
-// Background
-import Background from '../../assets/stripes/background-init.svg';
-import CardStripe from '../../assets/stripes/card-stripe.svg';
-    
+// Animation
+import Cube from "../anim/cube.svelte";
+  
 </script>
 
 <style>
 
-.filter-svg {
-    filter: invert(42%) sepia(7%) saturate(14%) hue-rotate(18deg) brightness(99%) contrast(86%);
-}
-
-.template {
-    grid-template-columns: 13% 17% 21% 12.5% 23% 13.5%;
-    grid-template-rows: 14% 11% 10% 30% 10% 14% 11%;
-    justify-content: stretch;  
-}
-
-.image-principal {
-    background: url('../../assets/IMG_3681.JPG');
-    background-size:cover;
-    background-repeat: no-repeat;
+.title {
+    font-size: 4.5em;
+    line-height: 0.80;
 }
 
 </style>

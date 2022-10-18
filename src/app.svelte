@@ -7,15 +7,10 @@
 
   <!-- Sections -->
   <main class="noise">
-    <Parallax sections={3.5} config={{stiffness: 0.1, damping: 0.8}} style="z-index: 0;">
-      <ParallaxLayer offset={0} style="display:flex; justify-content: center; align-items: center; min-height: 100vh;" >
-        <HomeSection />
-      </ParallaxLayer>
-      <div class="flex justify-center items-center h-screen z-0"></div>
-      <AboutSection class="flex justify-center items-center min-h-screen z-0" />
-      <ProjectSection class="flex justify-center items-center min-h-screen z-0" />
-      <ContactSection class="flex justify-center items-center min-h-screen z-0" />
-    </Parallax>
+    <HomeSection class="flex justify-center items-center min-h-screen z-10"/>
+    <AboutSection class="flex justify-center items-center min-h-screen z-10" />
+    <ProjectSection class="flex justify-center items-center min-h-screen z-10" />
+    <ContactSection class="flex justify-center items-center min-h-screen z-10" />
   </main>
 
   <!-- Footer -->
@@ -23,8 +18,6 @@
 </div>
 
 <script>
-
-import { Parallax, ParallaxLayer } from 'svelte-parallax';
 
 // Components
 import Pagination from './lib/pagination.svelte';
