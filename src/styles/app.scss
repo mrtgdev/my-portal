@@ -6,8 +6,9 @@
 
 :root {
 	--pure-white: #ffffff;
-	--primary-color: #080808;
-	--secondary-color: #ff8000;
+	--primary-color: #ff8000;
+	--secondary-color: #47c7fc;
+	--background-color: #080808;
 	--tertiary-color: #47c7fc;
 	--accent-color: #ff8000;
 	--heading-color: rgba(0, 0, 0, 0.7);
@@ -33,7 +34,7 @@ body {
 	min-height: 100vh;
 	padding: 0;
 	margin: 0;
-	background-color: var(--primary-color);
+	background-color: var(--background-color);
 	-webkit-user-select: none; /* Safari */
 	-ms-user-select: none; /* IE 10 and IE 11 */
 	user-select: none; /* Standard syntax */

@@ -18,6 +18,9 @@ module.exports = {
       grotesk: ['Space Grotesk', 'monospace'],
       titleGrotesk: ['Grotesk', 'sans-serif']
     },
+    letterSpacing: {
+      zero: "-0.07em"
+    },
     extend: {
       colors: {
         'bigstone': "#151515",
