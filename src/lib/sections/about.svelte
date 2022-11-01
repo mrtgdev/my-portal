@@ -1,39 +1,61 @@
 
 <!-- About Section -->
-<div class="flex flex-col gap-6 w-screen bg-green-400 h-full justify-center items-center font-grotesk space-y-4 px-8">
-    <div class="flex flex-col py-12 w-full space-y-6">
-        {#each aptitude as item, i }
-            <div>
-                <h1>
-                    { item.name }
+<div class="flex flex-col gap-6 w-screen lg:w-11/12 bg-transparent backdrop-blur-sm justify-center items-center font-grotesk p-8 text-white">
+    <!-- Pattern Background -->
+    <!-- About Text -->
+    <div class="flex flex-col space-y-24 justify-center items-center z-10">
+        <div id="welcome" class="space-y-12">
+            <div id="me" class="">
+                <p class="text-white">Hola! 👋, me llamo</p>
+                <h1 class="title uppercase font-black font-titleGrotesk text-5xl md:text-6xl 2xl:text-7xl bg-clip-text">
+                    Mario Ortega Palacios
                 </h1>
             </div>
-            <div id="markdown">
-                { @html item.source }
+            <div class="space-y-2 justify-center items-center"> 
+                <p class="text-xl text-forest font-semibold">&gt; Full-stack Developer residiendo en Madrid.</p>
+                <br>
+                <div class="w-11/12">
+                    <strong>Apasionado del diseño y la experiencia de usuario</strong>, procuro siempre que mis desarrollos sean estables, 
+                    inclusivos y accesible a cualquier persona que quiera utilizarlo.
+                </div>
+                <div class="">
+                    En mi tiempo libre me encanta hacer cosas externas a la programación, como escuchar mis vinilos, 
+                    hacer deporte y entretenerme con los resumenes de la NBA, F1…
+                </div>
             </div>
-        {/each}
+        </div>
+        <button id="card" class="card flex border-dashed hover:border-2 hover:border-forest p-4 hover:text-forest backdrop:transition 
+            duration-300 ease-in-out transform hover:-translate-y-2 hover:scale-105 text-start"
+            on:click={updateToggleMore}>
+            <strong>Si te interesa mi perfil, puedes pinchar para saber más de mi</strong>
+            <i class="{ more ? 'ri-arrow-right-up-line' : 'ri-arrow-right-down-line' } text-5xl lg:text-7xl " />
+        </button>
+        <div class="{ more ? 'block backdrop:transition duration-300 ease-in-out transform' : 'hidden' }">
+            <MoreAbout />
+        </div>
     </div>
 </div>
 
 <script>
 // @ts-nocheck
 
-// Markdowns
-import { html as Experience } from '../markdown/experience.md'; 
-import { html as Explore } from '../markdown/explore.md';
-import { html as Skills } from '../markdown/skills.md';
-import { html as Hobbies } from '../markdown/hobbies.md';
-import { html as SetUp } from '../markdown/setup.md';
+import { tick, afterUpdate } from 'svelte';
+
+// Section > Modal
+import MoreAbout from '../modal/more.svelte';
 
 // Styled SCSS
 import '../../styles/accordion.scss';
 
-let aptitude = [
-    { id: 'experience', name: 'Experiencia Laboral', source: Experience },
-    { id: 'explore', name: 'Aptitudes', source: Explore },
-    { id: 'skills', name: 'Skills', source: Skills },
-    { id: 'hobb', name: 'Hobbies', source: Hobbies },
-    { id: 'setup', name: 'Set Up', source: SetUp }
-];
+let more = false;
+
+async function updateToggleMore() {
+    await tick();
+    more = !more;
+}
+
+afterUpdate(() => {
+    console.log('Se actualiza');
+});
 
 </script>

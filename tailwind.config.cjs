@@ -25,7 +25,7 @@ module.exports = {
       colors: {
         'bigstone': "#151515",
         'fluro-papaya': "#fe5000",
-        'neon-blue': "#47f7fc",
+        'forest': '#00bb96'
       }
     },
   },

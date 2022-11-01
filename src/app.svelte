@@ -7,10 +7,12 @@
 
   <!-- Sections -->
   <main class="noise">
-    <HomeSection class="flex justify-center items-center min-h-screen z-10"/>
-    <AboutSection class="flex justify-center items-center min-h-screen z-10" />
-    <ProjectSection class="flex justify-center items-center min-h-screen z-10" />
-    <ContactSection class="flex justify-center items-center min-h-screen z-10" />
+    <Router>
+      <HomeSection class="flex justify-center items-center min-h-screen z-10"/>
+      <AboutSection class="flex justify-center items-center min-h-screen z-10" />
+      <ProjectSection class="flex justify-center items-center min-h-screen z-10" />
+      <ContactSection class="flex justify-center items-center min-h-screen z-10" />
+    </Router>
   </main>
 
   <!-- Footer -->
@@ -18,6 +20,8 @@
 </div>
 
 <script>
+
+import { Router } from 'svelte-navigator';
 
 // Components
 import Pagination from './lib/pagination.svelte';
