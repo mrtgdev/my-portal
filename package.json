@@ -18,8 +18,11 @@
     "vite-plugin-markdown": "^2.1.0"
   },
   "dependencies": {
+    "@barba/core": "^2.9.7",
+    "gsap": "^3.11.3",
     "remixicon": "^2.5.0",
     "sass": "^1.55.0",
+    "svelte-spa-router": "^3.3.0",
     "tw-elements": "^1.0.0-alpha12"
   }
 }

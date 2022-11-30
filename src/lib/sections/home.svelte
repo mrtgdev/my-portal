@@ -2,25 +2,46 @@
     - Solo aparecerá en la primera versión
     - Luego será un modal del portal
 -->
-<div id="home" class="flex flex-col gap-6 w-screen lg:w-10/12 bg-transparent h-screen justify-center items-center font-grotesk space-y-4 px-8">
-
-    <!-- DIV Center -->
-    <div class="w-full justify-center items-center flex flex-col h-4/5">
-        <!-- Carrousel -->
-        <div id="images" class="flex-wrap w-full h-full bg-green-300">
-
+<div id="home" class="flex min-h-screen justify-center items-center z-10" 
+    in:fly={{ y: -200, delay: 600, duration: 600 }} out:fly={{ y: -200, delay: 120, duration: 600 }}>
+    <div id="container" class="flex flex-col gap-6 w-full xl:w-10/12 bg-transparent h-screen justify-center items-center font-grotesk space-y-4 px-8 py-12">
+        <div class="grid overflow-hidden grid-cols-4 grid-rows-4 gap-2 w-full h-full">
+            <div class="box row-start-1 row-end-1 col-start-1 col-span-3 bg-forest">
+                <!-- Imagen y titulo de created to create -->
+                <h1 class="">
+                    Created to Create
+                </h1>
+                <img />
+            </div>
+            <button class="box col-span-1 bg-red-500" on:click={ () => push('/about') }>
+                Sobre Mi
+            </button>
+            <div class="box row-span-3 col-span-1 bg-orange-400">
+                <!-- Current Year -->
+                <div class="w-full h-2/3 bg-white">
+    
+                </div>
+                <div class="flex flex-col justify-end items-center text-end text-gray-800 font-titleGrotesk font-black z-0
+                hover:text-gray-500 backdrop:transition duration-500 ease-in-out transform hover:translate-y-2 hover:scale-110">
+                    <h2 class="text-5xl md:text-6xl lg:text-7xl flex-wrap leading-date">20<br>{ year }</h2>
+                    <i class="ri-arrow-right-up-line font-bold text-5xl lg:text-7xl" />
+                </div>
+            </div>
+            <div class="box row-span-3 col-span-3 bg-yellow-500">4</div>
         </div>
-    </div>
-
-    <!-- Current Year -->
-    <div class="absolute bottom-32 lg:bottom-12 right-12 lg:right-12 text-end text-gray-800 font-titleGrotesk font-black z-0
-    hover:text-gray-500 backdrop:transition duration-500 ease-in-out transform hover:translate-y-2 hover:scale-110">
-        <h2 class="text-5xl md:text-6xl lg:text-7xl flex-wrap leading-date">20<br>{ year }</h2>
-        <i class="ri-arrow-right-up-line font-bold text-5xl lg:text-7xl" />
     </div>
 </div>
 
+<div id="contact" class="flex justify-center items-center min-h-screen z-10">
+    <ContactSection />
+</div>
+
 <script>
+
+import { push } from 'svelte-spa-router';
+import { fly } from 'svelte/transition';
+
+import ContactSection from './contact.svelte';
 
 // > Get the current year
 let currentTime = new Date();

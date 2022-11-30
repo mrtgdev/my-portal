@@ -7,6 +7,8 @@ import './styles/app.scss';
 import 'tw-elements';
 import 'remixicon/fonts/remixicon.css';
 
+import { gsap } from 'gsap';
+
 import App from './app.svelte'
 
 const app = new App({

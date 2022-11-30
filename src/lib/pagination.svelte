@@ -1,5 +1,0 @@
-
-<!-- Pagination -->
-<div>
-    
-</div>

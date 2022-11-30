@@ -1,6 +1,7 @@
 
 <!-- About Section -->
-<div class="flex flex-col gap-6 w-screen lg:w-11/12 bg-transparent backdrop-blur-sm justify-center items-center font-grotesk p-8 text-white">
+<div class="flex flex-col gap-6 w-full lg:w-11/12 bg-transparent backdrop-blur-sm justify-center items-center font-grotesk p-8 text-white"
+    in:fly={{ y: -200, delay: 640, duration: 600 }} out:fly={{ y: -200, duration: 600 }}>
     <!-- Pattern Background -->
     <!-- About Text -->
     <div class="flex flex-col space-y-24 justify-center items-center z-10">
@@ -38,7 +39,8 @@
 
 <script>
 // @ts-nocheck
-
+import { push } from 'svelte-spa-router';
+import { fly } from 'svelte/transition';
 import { tick, afterUpdate } from 'svelte';
 
 // Section > Modal
