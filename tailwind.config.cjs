@@ -16,7 +16,8 @@ module.exports = {
     },
     fontFamily: {
       grotesk: ['Space Grotesk', 'monospace'],
-      titleGrotesk: ['Grotesk', 'sans-serif']
+      titleGrotesk: ['Grotesk', 'sans-serif'],
+      bungee: ['Bungee Shade', 'display'],
     },
     letterSpacing: {
       zero: "-0.07em"
@@ -25,7 +26,7 @@ module.exports = {
       colors: {
         'bigstone': "#151515",
         'fluro-papaya': "#fe5000",
-        'forest': '#00bb96'
+        'helheim': '#1AE09C'
       }
     },
   },

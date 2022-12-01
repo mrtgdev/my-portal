@@ -1,13 +1,21 @@
-<aside class="fixed w-full lg:w-32 h-28 lg:h-screen flex top-0 flex-shrink-0 lg:flex-col justify-between items-center bg-blue-400 p-2 py-12 transition-all z-50">
-    <div>
-        Logo
-    </div>
-    <div>
-        <div>
+<aside class="fixed w-full lg:w-40 h-28 lg:h-screen flex top-0 flex-shrink-0 lg:flex-col justify-between items-center bg-black p-2 py-12 transition-all z-50">
+    <button class="box flex w-24 h-24 justify-center items-center bg-green-400">
+        logo
+    </button>
+    <div class="justify-end items-center space-y-2">
+        <button class="box flex bg-red-400 items-center justify-center w-20 h-20">
             Seccion Nombre
-        </div>
-        <div>
+        </button>
+        <button class="box flex bg-red-400 items-center justify-center w-20 h-20">
             Modo lectura
-        </div>
+        </button>
     </div>
 </aside>
+
+<div class="absolute h-8 bottom-24 lg:bottom-32 right-2 rotate-90 text-end text-gray-800 font-grotesk font-black z-10
+    hover:text-gray-600 space-x-12 backdrop:transition duration-500 ease-in-out transform">
+        <a class="" href="/">
+            <label class="flex-wrap font-semibold">@mrtg.dev</label>
+        </a>
+        <label class="flex-wrap font-bold">(C) 2022</label>
+</div>
