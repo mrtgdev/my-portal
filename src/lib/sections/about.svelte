@@ -1,13 +1,13 @@
 
 <!-- About Section -->
-<div class="flex flex-col gap-6 w-full lg:w-11/12 bg-transparent backdrop-blur-sm justify-center items-center font-grotesk p-8 text-white"
+<div class="flex flex-col gap-6 w-full lg:w-11/12 bg-transparent backdrop-blur-sm justify-center items-center font-grotesk p-8 text-merino"
     in:fly={{ y: -200, delay: 640, duration: 600 }} out:fly={{ y: -200, duration: 600 }}>
     <!-- Pattern Background -->
     <!-- About Text -->
     <div class="flex flex-col space-y-24 justify-center items-center z-10">
         <div id="welcome" class="space-y-12">
             <div id="me" class="">
-                <p class="text-white">Hola! 👋, me llamo</p>
+                <p class="text-merino">Hola! 👋, me llamo</p>
                 <h1 class="title uppercase font-black font-titleGrotesk text-5xl md:text-6xl 2xl:text-7xl bg-clip-text">
                     Mario Ortega Palacios
                 </h1>

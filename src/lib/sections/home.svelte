@@ -14,11 +14,11 @@
                 <img src="" alt="" />
             </div>
             <!-- 2 -> DIV Title -->
-            <div class="flex box col-span-4 justify-center items-center" 
+            <div class="flex box col-span-4 justify-center items-center"
                 in:fly={{ x: -600, delay: 900, duration: 800, opacity: -20 }} out:fly={{ y: -200, delay: 120, duration: 600 }}>
                 2
                 <div class="box flex-inline">
-                    <p id="page-info" class="font-grotesk text-helheim font-bold">My Portafolio *</p>
+                    <p id="page-info" class="font-grotesk text-ocean-green font-bold">My Portafolio *</p>
                     <h1 id="title" class="text-8xl font-bungee text-left text-green-600 font-black">MARIO ORTEGA</h1>
                 </div>
                 
@@ -32,9 +32,9 @@
             <div class="box row-span-3 col-span-2  z-50 space-y-2"
                 in:fly={{ y: 550, delay: 800, duration: 680, opacity: 0 }} out:fly={{ x: 550, delay: 200*2, duration: 680, opacity: 0 }}>
                 <!-- Current Year -->
-                <button class="w-full h-2/3 bg-white" on:click={ () => push('/about') }>
+                <button class="w-full h-2/3 bg-merino" on:click={ () => push('/about') }>
                     <p class="w-11/12 px-8">Si te interesa mi perfil, puedes ver mi carrera profesional en </p>
-                    <div class="hover:text-helheim flex w-9/12 uppercase items-center mx-auto justify-center font-bold">
+                    <div class="hover:text-ocean-green flex w-9/12 uppercase items-center mx-auto justify-center font-bold">
                         <h1 class="uppercase text-5xl">Sobre Mi</h1>
                         <i class="ri-arrow-right-up-line font-bold text-8xl" />
                     </div>

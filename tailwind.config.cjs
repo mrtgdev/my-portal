@@ -25,8 +25,9 @@ module.exports = {
     extend: {
       colors: {
         'bigstone': "#151515",
-        'fluro-papaya': "#fe5000",
-        'helheim': '#1AE09C'
+        'ocean-green': "#48a583",
+        'merino': '#F4ECE4',
+        'victoria': '#5848A5'
       }
     },
   },
