@@ -4,51 +4,26 @@
 -->
 <div id="home" class="flex min-h-screen justify-center items-center z-10" 
     in:fly={{ y: -200, delay: 300, duration: 600, opacity: 0 }} out:fly={{ y: -200, delay: 120, duration: 600 }}>
-    <div id="container" class="flex flex-col gap-6 w-full xl:w-10/12 bg-transparent h-screen justify-center items-center font-grotesk space-y-4 p-8">
-        <div class="grid overflow-hidden grid-cols-5 grid-rows-4 gap-4 w-full h-full">
-            <!-- 1 -> DIV Image -->
-            <div class="box row-start-1 row-end-1 col-start-1 col-span-0 justify-center items-center bg-green-400"
-                in:fly={{ y: -600, delay: 700*2, duration: 800 }} out:fly={{ y: -200, delay: 120, duration: 600 }}>
-                <!-- Imagen modificada estilo RETRO -->
-                1
-                <img src="" alt="" />
-            </div>
-            <!-- 2 -> DIV Title -->
-            <div class="flex box col-span-4 justify-center items-center"
-                in:fly={{ x: -600, delay: 900, duration: 800, opacity: -20 }} out:fly={{ y: -200, delay: 120, duration: 600 }}>
-                2
-                <div class="box flex-inline">
-                    <p id="page-info" class="font-grotesk text-ocean-green font-bold">My Portafolio *</p>
-                    <h1 id="title" class="text-8xl font-bungee text-left text-green-600 font-black">MARIO ORTEGA</h1>
+    <div id="container" class="flex flex-col gap-6 w-full bg-transparent h-screen justify-center items-center font-grotesk space-y-4 p-8">
+        <!-- Background GRID -->
+        <div class="grid overflow-hidden grid-cols-4 grid-rows-5 gap-0.5 w-full h-full text-merino">
+            <div id="" class="box row-span-2 bg-ocean-green">1</div>
+            <div class="box flex row-span-5 col-span-2 bg-transparent justify-center items-center h-full w-full">
+                <div id="text" class="z-10">
+                    <h1 id="title" class="font-tuskerSuper text-ocean-green text-center text-9xl">MARIO ORTEGA PALACIOS</h1>
+                    <p id="page-info" class="font-grotesk text-merino font-bold px-4">My Portafolio *</p>
                 </div>
-                
+                <!-- IMG Black/White -->
             </div>
-            <!-- 3 -> DIV Blog and News -->
-            <div class="box row-span-3 col-span-3 bg-orange-400 z-10"
-                in:fly={{ y: 300, delay: 900, duration: 900, opacity: 0 }} out:fly={{ x: -600, delay: 120*2, duration: 600, opacity: 0 }}>
-                3
-            </div>
-            <!-- 4 -> DIV About Me and Current Year -->
-            <div class="box row-span-3 col-span-2  z-50 space-y-2"
-                in:fly={{ y: 550, delay: 800, duration: 680, opacity: 0 }} out:fly={{ x: 550, delay: 200*2, duration: 680, opacity: 0 }}>
-                <!-- Current Year -->
-                <button class="w-full h-2/3 bg-merino" on:click={ () => push('/about') }>
-                    <p class="w-11/12 px-8">Si te interesa mi perfil, puedes ver mi carrera profesional en </p>
-                    <div class="hover:text-ocean-green flex w-9/12 uppercase items-center mx-auto justify-center font-bold">
-                        <h1 class="uppercase text-5xl">Sobre Mi</h1>
-                        <i class="ri-arrow-right-up-line font-bold text-8xl" />
-                    </div>
-                </button>
-                <div class="flex w-full h-full bg-yellow-500">
-                    <div class="flex flex-col w-1/2 justify-center items-center text-center font-bungee font-black
-                    hover:text-gray-500 backdrop:transition duration-500 ease-in-out transform hover:translate-y-2 hover:scale-110">
-                        <h2 class="text-5xl md:text-6xl lg:text-8xl flex-wrap leading-date">20<br>{ year }</h2>
-                    </div>
-                    <div class="w-1/2">
-                        <h1 class="block w-20 font-grotesk">Created to Create</h1>
-                    </div>
+            <div class="box row-span-1 bg-transparent">3</div>
+            <div class="box row-span-4 bg-ocean-green text-bigstone">
+                <div class="flex flex-col w-1/2 py-4 justify-center items-center text-center font-tuskerSuper
+                hover:text-gray-800 backdrop:transition duration-500 ease-in-out transform hover:translate-x-2 hover:translate-y-4 hover:scale-110">
+                    <h2 class="text-5xl md:text-6xl lg:text-8xl flex-wrap leading-date">20<br>{ year }</h2>
                 </div>
-                
+            </div>
+            <div class="box flex row-span-3 bg-transparent justify-center items-end">
+                <h1 class="text-left w-full h-2/5 font-tuskerSuper text-gray-900 text-7xl uppercase z-0">Created to Create</h1>
             </div>
         </div>
     </div>
